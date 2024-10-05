@@ -1,0 +1,3 @@
+F:/Diploma_School_Project/cmake-build-debug/CMakeFiles/Diploma_School_Project.dir
+F:/Diploma_School_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/Diploma_School_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

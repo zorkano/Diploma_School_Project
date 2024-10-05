@@ -1,0 +1,239 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.19042 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: F:/Program Files/mingw64_msvcrt-x64_utls/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        F:/Diploma_School_Project/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdC/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "F:/Diploma_School_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1vtaoc"
+      binary: "F:/Diploma_School_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1vtaoc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/Diploma_School_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1vtaoc'
+        
+        Run Build Command(s): "F:/Program Files/mingw64_msvcrt-x64_utls/bin/ninja.exe" -v cmTC_68df5
+        [1/2] "F:\\Program Files\\mingw64_msvcrt-x64_utls\\bin\\gcc.exe"   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj -c "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=F:\\Program Files\\mingw64_msvcrt-x64_utls\\bin\\gcc.exe
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-w64-mingw32
+        Configured with: ../configure --prefix=/r/winlibs64_stage/17520.gcc/inst_gcc-12.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --with-stabs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --disable-libstdcxx-pch --with-mpc=/d/Prog/winlibs64_stage/custombuilt --with-mpfr=/d/Prog/winlibs64_stage/custombuilt --with-gmp=/d/Prog/winlibs64_stage/custombuilt --with-isl=/d/Prog/winlibs64_stage/custombuilt --enable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/r/winlibs64_stage/17520.gcc/gcc-12.2.0/build_mingw/mingw-w64 CFLAGS='-I/d/Prog/winlibs64_stage/custombuilt/include/libdl-win32 -D__USE_MINGW_ACCESS' CXXFLAGS=-D__USE_MINGW_ACCESS LDFLAGS='-Wl,--disable-nxcompat -Wl,--disable-high-entropy-va -Wl,--disable-dynamicbase'
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders) 
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68df5.dir/'
+         f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/cc1.exe -quiet -v -iprefix f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/ -D_REENTRANT F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_68df5.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -o C:\\Users\\LENOVO\\AppData\\Local\\Temp\\cc12TMM5.s
+        GNU C17 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders) version 12.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version UNKNOWN-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "f:/program files/mingw64_msvcrt-x64_utls/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/12.2.0/include"
+        ignoring nonexistent directory "R:/winlibs64_stage/17520.gcc/inst_gcc-12.2.0/share/gcc/include"
+        ignoring nonexistent directory "/r/winlibs64_stage/17520.gcc/inst_gcc-12.2.0/share/gcc/include"
+        ignoring duplicate directory "f:/program files/mingw64_msvcrt-x64_utls/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed"
+        ignoring duplicate directory "f:/program files/mingw64_msvcrt-x64_utls/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/include
+         f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../include
+         f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed
+         f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C17 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders) version 12.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version UNKNOWN-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 11e0db502eb2edd262aeb87d2525f2c4
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68df5.dir/'
+         f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj C:\\Users\\LENOVO\\AppData\\Local\\Temp\\cc12TMM5.s
+        GNU assembler version 2.39 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64, built by Brecht Sanders) 2.39
+        COMPILER_PATH=f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/;f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../lib/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../\x0d
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.'\x0d
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "F:\\Program Files\\mingw64_msvcrt-x64_utls\\bin\\gcc.exe"  -v -Wl,-v CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj -o cmTC_68df5.exe -Wl,--out-implib,libcmTC_68df5.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        Using built-in specs.
+        COLLECT_GCC=F:\\Program Files\\mingw64_msvcrt-x64_utls\\bin\\gcc.exe
+        COLLECT_LTO_WRAPPER=f:/program\\ files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/lto-wrapper.exe
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        Target: x86_64-w64-mingw32
+        Configured with: ../configure --prefix=/r/winlibs64_stage/17520.gcc/inst_gcc-12.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --with-stabs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --disable-libstdcxx-pch --with-mpc=/d/Prog/winlibs64_stage/custombuilt --with-mpfr=/d/Prog/winlibs64_stage/custombuilt --with-gmp=/d/Prog/winlibs64_stage/custombuilt --with-isl=/d/Prog/winlibs64_stage/custombuilt --enable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/r/winlibs64_stage/17520.gcc/gcc-12.2.0/build_mingw/mingw-w64 CFLAGS='-I/d/Prog/winlibs64_stage/custombuilt/include/libdl-win32 -D__USE_MINGW_ACCESS' CXXFLAGS=-D__USE_MINGW_ACCESS LDFLAGS='-Wl,--disable-nxcompat -Wl,--disable-high-entropy-va -Wl,--disable-dynamicbase'
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders) 
+        COMPILER_PATH=f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/;f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../lib/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/;f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_68df5.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_68df5.'
+         f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/collect2.exe -plugin f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/liblto_plugin.dll -plugin-opt=f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\LENOVO\\AppData\\Local\\Temp\\ccljN2Wc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_68df5.exe f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/crtbegin.o -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0 -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../.. -v CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_68df5.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/crtend.o
+        collect2 version 12.2.0
+        f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/liblto_plugin.dll -plugin-opt=f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\LENOVO\\AppData\\Local\\Temp\\ccljN2Wc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_68df5.exe f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/crtbegin.o -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0 -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../.. -v CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_68df5.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/crtend.o\x0d
+        GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders) 2.39\x0d
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_68df5.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_68df5.'\x0d
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/include]
+          add: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../include]
+          add: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed]
+          add: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/include] ==> [F:/Program Files/mingw64_msvcrt-x64_utls/lib/gcc/x86_64-w64-mingw32/12.2.0/include]
+        collapse include dir [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../include] ==> [F:/Program Files/mingw64_msvcrt-x64_utls/include]
+        collapse include dir [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed] ==> [F:/Program Files/mingw64_msvcrt-x64_utls/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed]
+        collapse include dir [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/include] ==> [F:/Program Files/mingw64_msvcrt-x64_utls/x86_64-w64-mingw32/include]
+        implicit include dirs: [F:/Program Files/mingw64_msvcrt-x64_utls/lib/gcc/x86_64-w64-mingw32/12.2.0/include;F:/Program Files/mingw64_msvcrt-x64_utls/include;F:/Program Files/mingw64_msvcrt-x64_utls/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed;F:/Program Files/mingw64_msvcrt-x64_utls/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: 'F:/Diploma_School_Project/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-1vtaoc']
+        ignore line: []
+        ignore line: [Run Build Command(s): "F:/Program Files/mingw64_msvcrt-x64_utls/bin/ninja.exe" -v cmTC_68df5]
+        ignore line: [[1/2] "F:\\Program Files\\mingw64_msvcrt-x64_utls\\bin\\gcc.exe"   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj -c "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCCompilerABI.c"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=F:\\Program Files\\mingw64_msvcrt-x64_utls\\bin\\gcc.exe]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../configure --prefix=/r/winlibs64_stage/17520.gcc/inst_gcc-12.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --with-stabs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --disable-libstdcxx-pch --with-mpc=/d/Prog/winlibs64_stage/custombuilt --with-mpfr=/d/Prog/winlibs64_stage/custombuilt --with-gmp=/d/Prog/winlibs64_stage/custombuilt --with-isl=/d/Prog/winlibs64_stage/custombuilt --enable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/r/winlibs64_stage/17520.gcc/gcc-12.2.0/build_mingw/mingw-w64 CFLAGS='-I/d/Prog/winlibs64_stage/custombuilt/include/libdl-win32 -D__USE_MINGW_ACCESS' CXXFLAGS=-D__USE_MINGW_ACCESS LDFLAGS='-Wl,--disable-nxcompat -Wl,--disable-high-entropy-va -Wl,--disable-dynamicbase']
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh  built by Brecht Sanders) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68df5.dir/']
+        ignore line: [ f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/cc1.exe -quiet -v -iprefix f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/ -D_REENTRANT F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_68df5.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fdiagnostics-color=always -o C:\\Users\\LENOVO\\AppData\\Local\\Temp\\cc12TMM5.s]
+        ignore line: [GNU C17 (MinGW-W64 x86_64-msvcrt-posix-seh  built by Brecht Sanders) version 12.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version UNKNOWN-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "f:/program files/mingw64_msvcrt-x64_utls/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/12.2.0/include"]
+        ignore line: [ignoring nonexistent directory "R:/winlibs64_stage/17520.gcc/inst_gcc-12.2.0/share/gcc/include"]
+        ignore line: [ignoring nonexistent directory "/r/winlibs64_stage/17520.gcc/inst_gcc-12.2.0/share/gcc/include"]
+        ignore line: [ignoring duplicate directory "f:/program files/mingw64_msvcrt-x64_utls/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "f:/program files/mingw64_msvcrt-x64_utls/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "/mingw/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/include]
+        ignore line: [ f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../include]
+        ignore line: [ f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed]
+        ignore line: [ f:\\program files\\mingw64_msvcrt-x64_utls\\bin\\../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (MinGW-W64 x86_64-msvcrt-posix-seh  built by Brecht Sanders) version 12.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version UNKNOWN-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 11e0db502eb2edd262aeb87d2525f2c4]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68df5.dir/']
+        ignore line: [ f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj C:\\Users\\LENOVO\\AppData\\Local\\Temp\\cc12TMM5.s]
+        ignore line: [GNU assembler version 2.39 (x86_64-w64-mingw32) using BFD version (Binutils for MinGW-W64 x86_64  built by Brecht Sanders) 2.39]
+        ignore line: [COMPILER_PATH=f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../lib/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../\x0d]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.'\x0d]
+        ignore line: [[2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && "F:\\Program Files\\mingw64_msvcrt-x64_utls\\bin\\gcc.exe"  -v -Wl -v CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj -o cmTC_68df5.exe -Wl --out-implib libcmTC_68df5.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=F:\\Program Files\\mingw64_msvcrt-x64_utls\\bin\\gcc.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=f:/program\\ files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/lto-wrapper.exe]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../configure --prefix=/r/winlibs64_stage/17520.gcc/inst_gcc-12.2.0/share/gcc --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32 --enable-offload-targets=nvptx-none --with-pkgversion='MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders' --with-tune=generic --enable-checking=release --enable-threads=posix --disable-sjlj-exceptions --disable-libunwind-exceptions --disable-serial-configure --disable-bootstrap --enable-host-shared --enable-plugin --disable-default-ssp --disable-rpath --disable-libstdcxx-debug --disable-version-specific-runtime-libs --with-stabs --disable-symvers --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --disable-gold --disable-nls --disable-stage1-checking --disable-win32-registry --disable-multilib --enable-ld --enable-libquadmath --enable-libada --enable-libssp --enable-libstdcxx --enable-lto --enable-fully-dynamic-string --enable-libgomp --enable-graphite --enable-mingw-wildcard --enable-libstdcxx-time --disable-libstdcxx-pch --with-mpc=/d/Prog/winlibs64_stage/custombuilt --with-mpfr=/d/Prog/winlibs64_stage/custombuilt --with-gmp=/d/Prog/winlibs64_stage/custombuilt --with-isl=/d/Prog/winlibs64_stage/custombuilt --enable-libstdcxx-backtrace --enable-install-libiberty --enable-__cxa_atexit --without-included-gettext --with-diagnostics-color=auto --enable-clocale=generic --with-libiconv --with-system-zlib --with-build-sysroot=/r/winlibs64_stage/17520.gcc/gcc-12.2.0/build_mingw/mingw-w64 CFLAGS='-I/d/Prog/winlibs64_stage/custombuilt/include/libdl-win32 -D__USE_MINGW_ACCESS' CXXFLAGS=-D__USE_MINGW_ACCESS LDFLAGS='-Wl,--disable-nxcompat -Wl,--disable-high-entropy-va -Wl,--disable-dynamicbase']
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.2.0 (MinGW-W64 x86_64-msvcrt-posix-seh  built by Brecht Sanders) ]
+        ignore line: [COMPILER_PATH=f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../lib/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_68df5.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_68df5.']
+        ignore line: [ f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/collect2.exe -plugin f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/liblto_plugin.dll -plugin-opt=f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\LENOVO\\AppData\\Local\\Temp\\ccljN2Wc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_68df5.exe f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/crtbegin.o -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0 -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../.. -v CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_68df5.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/crtend.o]
+        ignore line: [collect2 version 12.2.0]
+        ignore line: [f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe -plugin f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/liblto_plugin.dll -plugin-opt=f:/program files/mingw64_msvcrt-x64_utls/bin/../libexec/gcc/x86_64-w64-mingw32/12.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\LENOVO\\AppData\\Local\\Temp\\ccljN2Wc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -m i386pep -Bdynamic -o cmTC_68df5.exe f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/crtbegin.o -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0 -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib/../lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/lib -Lf:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../.. -v CMakeFiles/cmTC_68df5.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_68df5.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 f:/program files/mingw64_msvcrt-x64_utls/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/crtend.o\x0d]
+        ignore line: [GNU ld (Binutils for MinGW-W64 x86_64  built by Brecht Sanders) 2.39\x0d]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_68df5.exe' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_68df5.'\x0d]
+        ignore line: []
+        ignore line: []
+        linker tool for 'C': f:/program files/mingw64_msvcrt-x64_utls/x86_64-w64-mingw32/bin/ld.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "F:/Program Files/JetBrains/CLion 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "f:/program files/mingw64_msvcrt-x64_utls/x86_64-w64-mingw32/bin/ld.exe" "-v"
+      GNU ld (Binutils for MinGW-W64 x86_64, built by Brecht Sanders) 2.39
+...
