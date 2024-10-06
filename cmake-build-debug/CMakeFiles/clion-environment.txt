@@ -1,4 +1,0 @@
-ToolSet: 10.0 w64 (local)@F:\Program Files\mingw64_msvcrt-x64_utls
-Options: 
-
-Options:-DCMAKE_MAKE_PROGRAM=F:/Program Files/mingw64_msvcrt-x64_utls/bin/ninja.exe
