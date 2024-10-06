@@ -9,7 +9,7 @@
 
 
 void add_student(student_t School_arr, int School_count){
-
+    printf("");
 }
 
 void delete_student(student_t School_arr, int School_count){
