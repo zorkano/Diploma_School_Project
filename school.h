@@ -1,11 +1,11 @@
-//
+ //
 // Created by LENOVO on 05-Oct-24.
 //
 
 #ifndef SCHOOL_H
 #define SCHOOL_H
+
 #include <Windows.h>
-#include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "config.h"
