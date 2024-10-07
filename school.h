@@ -5,11 +5,6 @@
 #ifndef SCHOOL_H
 #define SCHOOL_H
 
-#include <Windows.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "config.h"
-
 typedef struct{
     char name[50];
     char address[50];
@@ -18,8 +13,6 @@ typedef struct{
     int ID;
     int grade;
 }student_t;
-
-
 
 
 

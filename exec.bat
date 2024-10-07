@@ -1,2 +1,3 @@
-gcc main.c display.c school.c -o Project
+gcc main.c school.c display.c -o project
 Project.exe
+pause
