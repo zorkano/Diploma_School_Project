@@ -5,10 +5,11 @@
 #ifndef SCHOOL_H
 #define SCHOOL_H
 
-typedef struct{
-    char name[50];
-    char address[50];
-    char phone[11];
+
+typedef struct student{
+    char* name;
+    char* address;
+    char* phone;
     int age;
     int ID;
     int grade;
@@ -16,17 +17,17 @@ typedef struct{
 
 
 
-void add_student(student_t School_arr, int School_count);
+void add_student(student_t* School_arr, int School_count);
 
-void delete_student(student_t School_arr, int School_count);
+void delete_student(student_t* School_arr, int School_count);
 
-void display_student(student_t School_arr, int School_count);
+void display_student(student_t* School_arr, int School_count);
 
-void find_student(student_t School_arr, int School_count);
+void find_student(student_t* School_arr, int School_count);
 
-void store_student(student_t School_arr, int School_count);
+void store_student(student_t* School_arr, int School_count);
 
-int load_students(student_t School_arr);
+int load_students(student_t* School_arr);
 
 int Log_in();
 

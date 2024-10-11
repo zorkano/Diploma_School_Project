@@ -5,9 +5,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define Authorized 1
+#define Authorized 2
 #define NotAuthorized 0
-#define User_name "Dean"
-#define User_password "1234"
+#define Staff_Username "dean"
+#define Staff_Password "1234"
+#define TRUE 1
+#define FALSE 0
 
 #endif 

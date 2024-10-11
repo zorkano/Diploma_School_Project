@@ -47,6 +47,8 @@ void Move_Cursor(const int x, const int y) {
 
 /*
  * Function to create a colored brder of a given width and height at (x, y)
+ * X: Along the horizontal plane
+ * Y: Along the vertical plane
  */
 void Application_Border(const int x, const int y, const int width, const int height, int borderColor){
     system("cls");
@@ -81,6 +83,8 @@ void Application_Border(const int x, const int y, const int width, const int hei
 
 /*
  * Helper function to navigate the menus
+ * (X,Y) horizontal and vertical positions respectivly
+ * Color to highlight the choice
  */
 void Choice_Navigation(int x, int y, int color) {
     int i, j;
@@ -118,9 +122,49 @@ void Print_Ascii(int x, int y, char** s, int Message_Color){
     Reset_Console_Color();
 }
 
+void Get_Password(char* password, int size) {
+    HANDLE hConsole = GetStdHandle(STD_INPUT_HANDLE);
+    DWORD mode, numRead;
+    INPUT_RECORD inputRecord;
+    int index = 0;
 
 
-int Log_In_Menu(){
+    while (1) {
+        // Read input event
+        ReadConsoleInput(hConsole, &inputRecord, 1, &numRead);
+
+        // Check for key press event
+        if(inputRecord.EventType == KEY_EVENT && inputRecord.Event.KeyEvent.bKeyDown){
+            char ch = inputRecord.Event.KeyEvent.uChar.AsciiChar;
+
+            // Handle Enter key
+            if(ch == '\r'){
+                password[index] = '\0';  // Null-terminate the string
+                printf("\n");  // Move to the next line after input is complete
+                break;
+            }
+
+            // Handle Backspace key
+            if(ch == '\b' && index > 0){
+                index--;  // Move back the index
+                printf("\b \b");  // Erase the previous character from the console
+            }
+
+            // Handle printable characters
+            else if(ch >= 32 && ch <= 126 && index < size - 1){
+                password[index++] = ch;  // Store the character in the password
+
+                printf("*");  // Print asterisk in place of the actual character
+            }
+        }
+    }
+}
+
+/*
+ * Function for the UI of the Log in menu
+ * @param state: status of the login function
+ */
+int Log_In_Menu(int* state){
     char* Log_In_Message[] = {
     "██╗      ██████╗  ██████╗     ██╗███╗   ██╗    ████████╗ ██████╗",
     "██║     ██╔═══██╗██╔════╝     ██║████╗  ██║    ╚══██╔══╝██╔═══██╗",
@@ -136,13 +180,14 @@ int Log_In_Menu(){
     "╚═╝     ╚═╝   ╚═╝       ╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝",
     "\0"
     };
-    int state;
+    char Username[20];
+    char Password[20];
     int i;
-
+    
     system("cls");
-    Application_Border(0, 0, 150, 50, BACKGROUND_WHITE);
+    Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
 
-    Print_Ascii(32, 2, Log_In_Message, BACKGROUND_RED);
+    Print_Ascii(ASCII_ART_MASSEGE_X, ASCII_ART_MASSEGE_Y, Log_In_Message, BACKGROUND_RED);
     Print_Ascii(50, 25, menu, BACKGROUND_RED);
     Move_Cursor(51, 27);
     Set_Console_Color(0, BACKGROUND_WHITE);
@@ -155,51 +200,60 @@ int Log_In_Menu(){
     Print_Ascii(50, 29, menu, BACKGROUND_RED);
     Move_Cursor(51, 31);
     Set_Console_Color(0, BACKGROUND_WHITE);
+
     for(i = 0; i < MENU_WIDTH -1; i++){
         printf(".");
     }
     Reset_Console_Color();
     Move_Cursor(51, 31);
     printf("Password:");
-    Set_Console_Color(0, 37);
-    printf("Test");
-    
-    state = Log_in();
-    return 1;
+    Set_Console_Color(0, BACKGROUND_WHITE);
+
+    //Move to the location of the username
+    fflush(stdin);
+    Move_Cursor(60, 27);
+    scanf("%s", &Username);
+    fflush(stdin);
+    //Move to the location of the password
+    Move_Cursor(60, 31);
+    Get_Password(Password, 20);
+    *state = Log_in(Username, Password);
+    Reset_Console_Color();
 }
 
 
-void Find_Student_Menu() {
-    Application_Border(0, 0, 200, 50, BACKGROUND_WHITE);
+void Find_Student_Menu(int* state){
+    Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
 }
 
-void Display_Student_Menu() {
-    Application_Border(0, 0, 200, 50, BACKGROUND_WHITE);
+void Display_Student_Menu(int* state){
+    Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
 }
 
-void Edit_Student_Menu() {
-    Application_Border(0, 0, 200, 50, BACKGROUND_WHITE);
+void Edit_Student_Menu(int* state){
+    Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
 }
 
-void Add_Student_Menu() {
-    Application_Border(0, 0, 200, 50, BACKGROUND_WHITE);
+void Add_Student_Menu(int* state){
+    Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
 }
 
-void Delete_Student_Menu() {
-    Application_Border(0, 0, 200, 50, BACKGROUND_WHITE);
+void Delete_Student_Menu(int* state){
+    Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
 }
 
-
-void Developer_Info_Menu() {
+void Developer_Info_Menu(int* state){
     system("cls");
-    Application_Border(0, 0, 200, 50, BACKGROUND_WHITE);
+    Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
 }
 
 /*
  * Function to draw the UI of the Main menu
  */
-void Main_Menu_UI() {
+void Main_Menu_UI(){
+    // system("chcp 65001");
     system("cls");
+
     char* Welcome_messege[] = {
     "██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗",
     "██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗",
@@ -219,9 +273,10 @@ void Main_Menu_UI() {
     HWND hwnd = GetConsoleWindow();
     ShowWindow(hwnd, SW_MAXIMIZE);
 
-    Application_Border(0, 0, 150, 50, BACKGROUND_WHITE);
+    Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
 
-    Print_Ascii(32, 2, Welcome_messege, BACKGROUND_RED);
+    Print_Ascii(ASCII_ART_MASSEGE_X,
+     ASCII_ART_MASSEGE_Y, Welcome_messege, BACKGROUND_RED);
 
     Print_Ascii(50, 25, menu, BACKGROUND_RED);
     Move_Cursor(62, 27);
@@ -237,9 +292,8 @@ void Main_Menu_UI() {
 /*
  * Function to navigate the main menu
  */
-int Start(){
-    int status = 1;
-    int Current_Choice = 1;
+int Start(int* state){
+    int Current_Choice = LOG_IN_UI;
 
     Main_Menu_UI();
     Choice_Navigation(51, 26, BACKGROUND_WHITE);
@@ -261,7 +315,7 @@ int Start(){
     // Set console mode to disable line buffering
     SetConsoleMode(hInput, mode & ~(ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT));
     
-    while(status){
+    while(TRUE){
 
         // Create an event record structure
         INPUT_RECORD inputRecord;
@@ -277,7 +331,7 @@ int Start(){
 
             // Check for arrow keys
             if(VK_UP == virtualKeyCode && inputRecord.Event.KeyEvent.bKeyDown) {
-                if(1 == Current_Choice){
+                if(LOG_IN_UI == Current_Choice){
                     Choice_Navigation(51, 26, BACKGROUND_BLACK);
                     Set_Console_Color(BACKGROUND_WHITE, BACKGROUND_BLACK);
                     Move_Cursor(62, 27);
@@ -286,8 +340,8 @@ int Start(){
                     Move_Cursor(58, 31);
                     Set_Console_Color(BACKGROUND_BLACK, BACKGROUND_WHITE);
                     printf("About Developer");
-                    Current_Choice = 2;
-                }else if(2 == Current_Choice){
+                    Current_Choice = DEV_INFO_UI;
+                }else if(DEV_INFO_UI == Current_Choice){
                     Choice_Navigation(51, 30, BACKGROUND_BLACK);
                     Set_Console_Color(BACKGROUND_WHITE, BACKGROUND_BLACK);
                     Move_Cursor(58, 31);
@@ -296,10 +350,10 @@ int Start(){
                     Set_Console_Color(BACKGROUND_BLACK, BACKGROUND_WHITE);
                     Move_Cursor(62, 27);
                     printf("Log In");
-                    Current_Choice = 1;
+                    Current_Choice = LOG_IN_UI;
                 }
             }else if(VK_DOWN == virtualKeyCode && inputRecord.Event.KeyEvent.bKeyDown) {
-                if(1 == Current_Choice){
+                if(LOG_IN_UI == Current_Choice){
                     Choice_Navigation(51, 26, BACKGROUND_BLACK);
                     Set_Console_Color(BACKGROUND_WHITE, BACKGROUND_BLACK);
                     Move_Cursor(62, 27);
@@ -308,8 +362,8 @@ int Start(){
                     Move_Cursor(58, 31);
                     Set_Console_Color(BACKGROUND_BLACK, BACKGROUND_WHITE);
                     printf("About Developer");
-                    Current_Choice = 2;
-                }else if(2 == Current_Choice){
+                    Current_Choice = DEV_INFO_UI;
+                }else if(DEV_INFO_UI == Current_Choice){
                     Choice_Navigation(51, 30, BACKGROUND_BLACK);
                     Set_Console_Color(BACKGROUND_WHITE, BACKGROUND_BLACK);
                     Move_Cursor(58, 31);
@@ -318,20 +372,17 @@ int Start(){
                     Set_Console_Color(BACKGROUND_BLACK, BACKGROUND_WHITE);
                     Move_Cursor(62, 27);
                     printf("Log In");
-                    Current_Choice = 1;                    
+                    Current_Choice = LOG_IN_UI;                    
                 }
             }else if(VK_RETURN == virtualKeyCode && inputRecord.Event.KeyEvent.bKeyDown){
-                if(1 == Current_Choice){
-                    Log_In_Menu();
-                    
+                if(LOG_IN_UI == Current_Choice){
+                    *state = LOG_IN_UI;
                 }else{
-                    Developer_Info_Menu();
+                    *state = DEV_INFO_UI;
                 }
-                status = 0;
+                break;
             }
-            
             Reset_Console_Color();
         }
     }
-    return Current_Choice;
 }
