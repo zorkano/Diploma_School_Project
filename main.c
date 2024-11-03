@@ -1,12 +1,12 @@
 #include "display.h"
 
 int main(void){
-    system("chcp 65001");
-    int state = START_UI;
+    int state = START_UI; //return to START_UI after finishing
     int wrongPass;
+    system("chcp 65001");
 
     while(1){
-        switch (state)
+        switch(state)
         {
         case START_UI:
             wrongPass = 0;
@@ -25,7 +25,16 @@ int main(void){
             Developer_Info_Menu(&state);
             break;
         case OPTIONS_UI:
-            
+            Options_menu(&state);
+            break;
+        case ADD_STUDENT_UI:
+            Add_Student_Menu(&state);
+            break;
+        case DISPLAY_STUDENT_UI:
+            Display_Student_Menu(&state);
+            break;
+        case FIND_STUDENT_UI:
+            Find_Student_Menu(&state);
             break;
         default:
             break;
