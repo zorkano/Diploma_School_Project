@@ -20,8 +20,8 @@ void add_student(student student){
 void delete_student(student* std){
     int i;
     i = (std - School);
-    School[i] = School[student_number];
-    School[student_number] = (student){"", 0, 0, 0, 0, 0};
+    School[i] = School[student_number - 1];
+    School[student_number - 1] = (student){0};
     student_number--;
 }
 

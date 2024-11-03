@@ -226,9 +226,11 @@ void Log_In_Menu(int* state){
 
 
 student Add_Student_viewer(){
-    int i,j;
+    int i = 0,j = 0;
     int ID_Check;
     char ch;
+    int flag = 1;
+    int stat;
     student temp;
 
     Set_Console_Color(4, 0);
@@ -285,43 +287,60 @@ student Add_Student_viewer(){
     Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 24);
     printf("from 0 to 100");
 
-    Move_Cursor(CARD_POS_X + 5, CARD_POS_Y + 3);
-    printf("Student Name: ");
-    for(i = 0; i < 50; i++){
-        ch = getc(stdin);
-        if(ch == '\n'){
-            temp.Name[i] = '\0';
-            break;
-        }else if((ch == '\b') && (i > 0)){
-            temp.Name[i-1] = 0;
-        }else{
-            temp.Name[i] = ch;
+    do{
+        fflush(stdin);
+        for(i = 10;i < CARD_SIZE_X - 1; i++){
+            Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 3);
+            printf(" ");
         }
-    }
-    fflush(stdin);
+        Move_Cursor(CARD_POS_X + 5, CARD_POS_Y + 3);
+        printf("New Student Name:");
+        j=0;
+        while(1){
+            ch = getc(stdin);
+            if((ch == '\n') || (j == 49)){
+                temp.Name[j] = '\0';
+                flag = 0;
+                break;
+            }else if((ch == '\b') && (j > 0)){
+                temp.Name[j-1] = 0;
+                j--;
+            }else if((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || (ch == 32)){
+                temp.Name[j] = ch;
+            }else{
+                break;
+            }
+            j++;
+        }
+    }while(flag);
     
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 7);
             printf(" ");
         }
         Move_Cursor(CARD_POS_X + 5, CARD_POS_Y + 7);
         printf("Student ID:");
-        scanf(" %d", &temp.ID);
-        ID_Check = check_ID(temp.ID);
-    }while((temp.ID > 1000 || temp.ID < 0 || ID_Check));
+        stat = scanf("%i", &temp.ID);
+        if(stat){
+            ID_Check = check_ID(temp.ID);
+        }
+    }while((temp.ID > 1000 || temp.ID < 0 || !(stat) || ID_Check));
 
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 11);
             printf(" ");
         }
         Move_Cursor(CARD_POS_X + 5, CARD_POS_Y + 11);
         printf("Student Age: ");
-        scanf(" %d", &temp.Age);
-    }while(temp.Age < 5 || temp.Age > 25);
+        stat = scanf(" %d", &temp.Age);
+    }while(temp.Age < 5 || temp.Age > 25 || !(stat));
 
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 15);
             printf(" ");
@@ -329,9 +348,10 @@ student Add_Student_viewer(){
         Move_Cursor(CARD_POS_X + 5, CARD_POS_Y + 15);
         printf("Math grade: ");
         scanf(" %d", &temp.Math_grade);
-    }while(temp.Math_grade < 0 || temp.Math_grade > 100);
+    }while(temp.Math_grade < 0 || temp.Math_grade > 100 || !(stat));
 
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 19);
             printf(" ");
@@ -339,9 +359,10 @@ student Add_Student_viewer(){
         Move_Cursor(CARD_POS_X + 5, CARD_POS_Y + 19);
         printf("English grade: ");
         scanf(" %d", &temp.English_grade);
-    }while(temp.English_grade < 0 || temp.English_grade > 100);
+    }while(temp.English_grade < 0 || temp.English_grade > 100 || !(stat));
 
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 23);
             printf(" ");
@@ -349,7 +370,7 @@ student Add_Student_viewer(){
         Move_Cursor(CARD_POS_X + 5, CARD_POS_Y + 23);
         printf("Physics grade: ");
         scanf(" %d", &temp.Physics_grade);
-    }while(temp.Physics_grade < 0 || temp.Physics_grade > 100);
+    }while(temp.Physics_grade < 0 || temp.Physics_grade > 100 || !(stat));
 
     add_student(temp);
 }
@@ -357,6 +378,8 @@ student Add_Student_viewer(){
 void Edit_student_viewer(student * std){
     int i,j;
     char ch;
+    int stat;
+    int flag = 1;
     int ID_Check;
     student temp;
 
@@ -438,72 +461,90 @@ void Edit_student_viewer(student * std){
     Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 25);
     printf("from 0 to 100");
 
-    Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 4);
-    printf("New Student Name:");
-    for(i = 0;i < 50; i++){
-        ch = getc(stdin);
-        if((ch == '\n') || (i == 49)){
-            temp.Name[i] = '\0';
-            break;
-        }else if((ch == '\b') && (i > 0)){
-            temp.Name[i-1] = 0;
-        }else{
-            temp.Name[i] = ch;
+
+    
+    do{
+        fflush(stdin);
+        for(i = 10;i < CARD_SIZE_X - 1; i++){
+            Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 4);
+            printf(" ");
         }
-    }
-    fflush(stdin);
+        Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 4);
+        printf("New Student Name:");
+        j=0;
+        while(1){
+            ch = getc(stdin);
+            if((ch == '\n') || (j == 49)){
+                temp.Name[j] = '\0';
+                flag = 0;
+                break;
+            }else if((ch == '\b') && (j > 0)){
+                temp.Name[j-1] = 0;
+                j--;
+            }else if((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122) || (ch == 32)){
+                temp.Name[j] = ch;
+            }else{
+                break;
+            }
+            j++;
+        }
+    }while(flag);
 
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 8);
             printf(" ");
         }
         Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 8);
         printf("New Student ID:");
-        scanf(" %d", &temp.ID);
+        stat = scanf(" %d", &temp.ID);
         ID_Check = check_ID(temp.ID);
-    }while(((temp.ID > 1000 || temp.ID < 0 || ID_Check) && (temp.ID != std->ID)));
+    }while(((temp.ID > 1000 || temp.ID < 0 || ID_Check || !(stat)) && (temp.ID != std->ID)));
 
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 12);
             printf(" ");
         }
         Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 12);
         printf("New Student Age: ");
-        scanf(" %d", &temp.Age);
-    }while(temp.Age < 5 || temp.Age > 25);
+        stat = scanf(" %d", &temp.Age);
+    }while(temp.Age < 5 || temp.Age > 25 || !(stat));
 
     do{
-        
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 16);
             printf(" ");
         }
         Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 16);
         printf("New Math grade: ");
-        scanf(" %d", &temp.Math_grade);
-    }while(temp.Math_grade < 0 || temp.Math_grade > 100);
+        stat = scanf(" %d", &temp.Math_grade);
+    }while(temp.Math_grade < 0 || temp.Math_grade > 100 || !(stat));
 
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + i ,CARD_POS_Y + 20);
             printf(" ");
         }
         Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 20);
         printf("New English grade: ");
-        scanf(" %d", &temp.English_grade);
-    }while(temp.English_grade < 0 || temp.English_grade > 100);
+        stat = scanf(" %d", &temp.English_grade);
+    }while(temp.English_grade < 0 || temp.English_grade > 100 || !(stat));
 
     do{
+        fflush(stdin);
         for(i = 10;i < CARD_SIZE_X - 1; i++){
             Move_Cursor(CARD_POS_X + 3 ,CARD_POS_Y + 24);
             printf(" ");
         }
         Move_Cursor(CARD_POS_X + 10, CARD_POS_Y + 24);
         printf("New Physics grade: ");
-        scanf(" %d", &temp.Physics_grade);
-    }while(temp.Physics_grade < 0 || temp.Physics_grade > 100);
+        stat = scanf(" %d", &temp.Physics_grade);
+    }while(temp.Physics_grade < 0 || temp.Physics_grade > 100 || !(stat));
 
     *std = temp;
 }
@@ -997,7 +1038,7 @@ void Find_Student_Menu(int* state){
                 fflush(stdin);
                 if(0 == Option_num){
                     printf("Name: ");
-                    for(i = 0;; i++){
+                    for(i = 0; i < 50; i++){
                         ch = getc(stdin);
                         if(ch == '\n'){
                             Name[i] = '\0';
@@ -1131,7 +1172,43 @@ void Add_Student_Menu(int* state){
 }
 
 void Developer_Info_Menu(int* state){
+    int i;
+    int j;
+    char ch;
     Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
+    
+
+    Set_Console_Color(4, 0);
+
+    for(j = 0; j < CARD_SIZE_X - 1; j++){
+        Move_Cursor(CARD_POS_X - 10 + j, CARD_POS_Y);
+        printf("=");
+        Move_Cursor(CARD_POS_X - 10 + j, CARD_POS_Y + CARD_SIZE_Y);
+        printf("=");
+    }
+
+
+    for(i = 0;i < CARD_SIZE_Y - 1; i++){
+        Move_Cursor(CARD_POS_X - 11, 11+i);
+        printf("|");
+        Move_Cursor(CARD_POS_X - 11 + CARD_SIZE_X, 11+i);
+        printf("|");
+    }
+    Reset_Console_Color();
+    Move_Cursor(CARD_POS_X - 5, 13);
+    printf("Developer Name : Seif aldeen Mahmoud");
+    Move_Cursor(CARD_POS_X - 5, 17);
+    printf("Age: 21");
+    Move_Cursor(CARD_POS_X - 5, 21);
+    printf("Mansoura University");
+    Move_Cursor(CARD_POS_X - 5, 25);
+    printf("Faculty of Engineering");
+    Move_Cursor(CARD_POS_X - 5, 29);
+    printf("CCE Level 300");
+    while(ch != '\n'){
+        ch = getc(stdin);
+    }
+    *state = START_UI;
 }
 
 /**
