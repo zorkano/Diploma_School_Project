@@ -1,13 +1,13 @@
 # This is my final Project for the C Language part of the diploma
 
 
-# Instructions
-## use Up and Down arrows to navigate and Enter to choose
+## Instructions
+### use Up and Down arrows to navigate and Enter to choose
 
-# Log in Credentials
+## Log in Credentials
 
-## Username
-### Dean (Upper or lower case)
+### Username
+#### Dean (Upper or lower case)
 
-## Password 
-### 1234
+### Password 
+#### 1234
