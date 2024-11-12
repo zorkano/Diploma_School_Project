@@ -9,6 +9,7 @@
 #include "school.h"
 
 student School[1000];
+
 static int student_number = 0;
 
 void add_student(student student){
@@ -56,9 +57,9 @@ int grades_compare(const void *a, const void *b){
     int avg_2 = ((std2->Math_grade) + (std2->English_grade) + (std2->Physics_grade)) / 3;
 
     if(avg_1 > avg_2){
-        ret = 1;
-    }else if(avg_1 < avg_2){
         ret = -1;
+    }else if(avg_1 < avg_2){
+        ret = 1;
     }else{
         ret = 0;
     }

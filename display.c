@@ -869,16 +869,32 @@ void Options_menu(int* state){
     "Find Student",
     "Back to previous"
     };
+    char* Options_Message[] = {        
+    " ██████╗ ██████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗",
+    "██╔═══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝",
+    "██║   ██║██████╔╝   ██║   ██║██║   ██║██╔██╗ ██║███████╗",
+    "██║   ██║██╔═══╝    ██║   ██║██║   ██║██║╚██╗██║╚════██║",
+    "╚██████╔╝██║        ██║   ██║╚██████╔╝██║ ╚████║███████║",
+    " ╚═════╝ ╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝",
+    "         ███╗   ███╗███████╗███╗   ██╗██╗   ██╗",
+    "         ████╗ ████║██╔════╝████╗  ██║██║   ██║",
+    "         ██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║",
+    "         ██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║",
+    "         ██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝",
+    "         ╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝",
+    "\0"
+    };
     Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
-    
+    Print_Ascii(ASCII_ART_MASSEGE_X + 15, ASCII_ART_MASSEGE_Y, Options_Message, BACKGROUND_RED);
+
     for(i = 0; i < 4; i++){
-        Print_Ascii(15, 15 + (4 * i), menu, BACKGROUND_BLACK);
-        Move_Cursor(17, 17 + (4 * i));
+        Print_Ascii(57, 26 + (4 * i), menu, BACKGROUND_BLACK);
+        Move_Cursor(59, 28 + (4 * i));
         printf(Options[i]);
     }
-    Choice_Navigation(16, 16 + (4 * Option_num), BACKGROUND_WHITE);
+    Choice_Navigation(58, 27 + (4 * Option_num), BACKGROUND_WHITE);
     Set_Console_Color(BACKGROUND_BLACK, BACKGROUND_WHITE);
-    Move_Cursor(18, 17 + (4 * Option_num));
+    Move_Cursor(60, 28 + (4 * Option_num));
     printf(Options[Option_num]);
     
     HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE);
@@ -907,8 +923,8 @@ void Options_menu(int* state){
 
             // Check for arrow keys
             if(VK_UP == virtualKeyCode && inputRecord.Event.KeyEvent.bKeyDown) {
-                Choice_Navigation(16, 16 + (4 * Option_num), BACKGROUND_BLACK);
-                Move_Cursor(17, 17 + (4 * Option_num));
+                Choice_Navigation(58, 27 + (4 * Option_num), BACKGROUND_BLACK);
+                Move_Cursor(59, 28 + (4 * Option_num));
                 printf(Options[Option_num]);
                 if(ADD_STUDENT_UI == Current_Choice){
                     Current_Choice = START_UI;
@@ -922,13 +938,13 @@ void Options_menu(int* state){
                     }
                     Option_num--;
                 }
-                Choice_Navigation(16, 16 + (4 * Option_num), BACKGROUND_WHITE);
+                Choice_Navigation(58, 27 + (4 * Option_num), BACKGROUND_WHITE);
                 Set_Console_Color(BACKGROUND_BLACK, BACKGROUND_WHITE);
-                Move_Cursor(18, 17 + (4 * Option_num));
+                Move_Cursor(60, 28 + (4 * Option_num));
                 printf(Options[Option_num]);
             }else if(VK_DOWN == virtualKeyCode && inputRecord.Event.KeyEvent.bKeyDown) {
-                Choice_Navigation(16, 16 + (4 * Option_num), BACKGROUND_BLACK);
-                Move_Cursor(17, 17 + (4 * Option_num));
+                Choice_Navigation(58, 27 + (4 * Option_num), BACKGROUND_BLACK);
+                Move_Cursor(59, 28 + (4 * Option_num));
                 printf(Options[Option_num]);
                 if(START_UI == Current_Choice){
                     Current_Choice = ADD_STUDENT_UI;
@@ -941,9 +957,9 @@ void Options_menu(int* state){
                     }
                     Option_num++;
                 }
-                Choice_Navigation(16, 16 + (4 * Option_num), BACKGROUND_WHITE);
+                Choice_Navigation(58, 27 + (4 * Option_num), BACKGROUND_WHITE);
                 Set_Console_Color(BACKGROUND_BLACK, BACKGROUND_WHITE);
-                Move_Cursor(18, 17 + (4 * Option_num));
+                Move_Cursor(60, 28 + (4 * Option_num));
                 printf(Options[Option_num]);
             }else if(VK_RETURN == virtualKeyCode && inputRecord.Event.KeyEvent.bKeyDown){
                 *state = Current_Choice;
