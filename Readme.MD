@@ -1,7 +1,5 @@
-# This is my final Project for the C Language part of the diploma
-
 ## Project description:
-    The project is a mock school system of 1000 students with 4 features.
+    This is my final Project for the C Language part of the diploma, The project is a mock school system of 1000 students with 4 features.
 
 ### Features:
     Changes are saved after going back to the Log In menu
