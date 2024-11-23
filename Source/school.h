@@ -5,6 +5,10 @@
 #ifndef SCHOOL_H
 #define SCHOOL_H
 
+#define NAME_SORT 1
+#define ID_SORT 2
+#define MAX_STUDENTS 1000
+
 typedef struct student{
     char Name[50];
     int ID;

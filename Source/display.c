@@ -4,6 +4,7 @@
 #include <Windows.h>
 #include "school.h"
 #include "display.h"
+extern student_num;
 
 char* menu[] = {
 " ============================== ",
@@ -15,30 +16,33 @@ char* menu[] = {
 };
 
 
-
-/*
- *  Function to set console text and background color
+/**
+ * @brief Set the console text and background color.
+ * 
+ * @param textColor The color of the text.
+ * @param bgColor The color of the background.
  */
 void Set_Console_Color(const int textColor, const int bgColor) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     
     // Shift bgColor by 4 bits to set it as the background color 
     int ColorAttribute = textColor | (bgColor << 4);  
-
     SetConsoleTextAttribute(hConsole, ColorAttribute);
 }
 
-/*
- * return the console cursor color to the default
- * (white text on black background)
- */ 
+/**
+ * @brief Reset the console text and background color to default (white text on black background).
+ */
 void Reset_Console_Color() {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, 15);
 }
 
-/* 
- * Function to move the console cursor to specific (x, y) position
+/**
+ * @brief Move the console cursor to a specific (x, y) position.
+ * 
+ * @param x The horizontal position.
+ * @param y The vertical position.
  */
 void Move_Cursor(const int x, const int y) {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -46,83 +50,98 @@ void Move_Cursor(const int x, const int y) {
     SetConsoleCursorPosition(hConsole, Coord);
 }
 
-/*
- * Function to create a colored brder of a given width and height at (x, y)
- * X: Along the horizontal plane
- * Y: Along the vertical plane
+/**
+ * @brief Create a colored border of a given width and height at (x, y).
+ * 
+ * @param x The horizontal position
+ * @param y The vertical position 
+ * @param width The width of the border
+ * @param height The height of the border
+ * @param borderColor The color of the border
  */
-void Application_Border(const int x, const int y, const int width, const int height, int borderColor){
+void Application_Border(const int x, const int y, const int width, const int height, int borderColor) {
+    // Clear screen and set border color
     system("cls");
     Set_Console_Color(borderColor, 0);
-    //clear the console screen
     
-
-    // Top border
-    for (int i = 1; i < width - 1; i++) {
+    // Draw top border
+    for (int i = MENU_PADDING; i < width - MENU_PADDING; i++) {
         Move_Cursor(x + i, y);
-        printf("\u2580");
+        printf(BORDER_TOP);
     }
 
-    // Side borders
+    // Draw side borders
     for (int i = 0; i < height; i++) {
         // Left border
         Move_Cursor(x, y + i);   
-        printf("\u2588");
-
+        printf(BORDER_VERTICAL);
         // Right border
         Move_Cursor(x + width - 1, y + i);  
-        printf("\u2588");
+        printf(BORDER_VERTICAL);
     }
 
-    // Bottom border
-    for (int i = 1; i < width - 1; i++) {
+    // Draw bottom border
+    for (int i = MENU_PADDING; i < width - MENU_PADDING; i++) {
         Move_Cursor(x + i, y + height - 1);
-        printf("\u2584");
+        printf(BORDER_BOTTOM);
     }
+
     Reset_Console_Color();  // Reset colors back to default
 }
 
-/*
- * Helper function to navigate the menus
- * (X,Y) horizontal and vertical positions respectivly
- * Color to highlight the choice
+/**
+ * @brief Helper function to navigate the menus by highlighting selection.
+ * 
+ * @param x The horizontal position of highlight
+ * @param y The vertical position of highlight 
+ * @param color The color to highlight the choice
  */
 void Choice_Navigation(int x, int y, int color) {
     int i, j;
 
-    // Set the console color for the highlight
+    // Set highlight color
     Set_Console_Color(color, color);
 
-    // Move the cursor to the top-left corner of the menu item
-    Move_Cursor(x, y);
-
-    // Draw a rectangular block for the highlight
+    // Draw highlight block
     for (i = 0; i < MENU_HEIGHT; i++) {
-        for (j = 0; j < MENU_WIDTH -1; j++) {
-            // Move cursor to the correct position for each character
+        for (j = 0; j < MENU_WIDTH - MENU_PADDING; j++) {
             Move_Cursor(x + j, y + i);
-            // Print a solid block to fill the area
-            printf("\u2588");
+            printf(MENU_BLOCK); // Fill with solid blocks
         }
     }
 
-    // Reset the console color back to default after drawing the highlight
-    Reset_Console_Color();
+    Reset_Console_Color(); 
 }
 
-/*
- * Funcion to print ascii art on coordinates of console
+/**
+ * @brief Print ASCII art at specified console coordinates.
+ * 
+ * @param x The horizontal position to start printing
+ * @param y The vertical position to start printing
+ * @param s The ASCII art string array to print
+ * @param Message_Color The color of the ASCII art
  */
-void Print_Ascii(int x, int y, char** s, int Message_Color){
+void Print_Ascii(int x, int y, char** s, int Message_Color) {
     int i;
+    
+    // Set text color for ASCII art
     Set_Console_Color(4, 0);
-    for(i = 0; s[i] != "\0"; i++){
+
+    // Print each line of the ASCII art
+    for(i = 0; s[i] != "\0"; i++) {
         Move_Cursor(x, y++);
         printf("%s", s[i]);
     }
+
     Reset_Console_Color();
 }
 
+/**
+ * @brief encrypts the password the user enters and shows asterisks instead of the actual characters
+ * 
+ * @param password the array the password will be stored in
+ * @param size size of the password array
+ */
 void Get_Password(char* password, int size) {
     HANDLE hConsole = GetStdHandle(STD_INPUT_HANDLE);
     DWORD mode, numRead;
@@ -162,8 +181,8 @@ void Get_Password(char* password, int size) {
 }
 
 /**
- * Function for the UI of the Log in menu
- * @param state: status of the login function
+ * @brief draws the log-in menu and handles the user input
+ * @param state: a pointer to the state tracker of the program.
  */
 void Log_In_Menu(int* state){
     char* Log_In_Message[] = {
@@ -224,7 +243,10 @@ void Log_In_Menu(int* state){
     Reset_Console_Color();
 }
 
-
+/**
+ * @brief handels the addition of a new student and saves it to the database
+ * 
+ */
 student Add_Student_viewer(){
     int i = 0,j = 0;
     int ID_Check;
@@ -375,6 +397,11 @@ student Add_Student_viewer(){
     add_student(temp);
 }
 
+/**
+ * @brief handels the display of the student information and editing.
+ * 
+ * @param std pointer to the student to be displayed.
+ */
 void Edit_student_viewer(student * std){
     int i,j;
     char ch;
@@ -550,9 +577,9 @@ void Edit_student_viewer(student * std){
 }
 
 /**
- * @brief 
+ * @brief displays the student information.
  * 
- * @param std 
+ * @param std pointer to the student to be displayed.
  */
 void Find_Student_viewer(student* std){
     int i,j;
@@ -690,6 +717,13 @@ void Find_Student_viewer(student* std){
 
 }
 
+/**
+ * @brief displays all students in the database.
+ * 
+ * @param sort_type the type of sorting to be used. (BY NAME, BY ID, BY DEGREE)
+ *
+ * 
+ */
 void Display_student_viewer(int sort_type){
     int i;
     int j;
@@ -855,9 +889,9 @@ void Display_student_viewer(int sort_type){
 /**
  *  @brief Draws the UI of the options Menu.
  *  
- *  This function is used for the functionality of the options menu UI.
+ *  
  * 
- *  @return state: a pointer to the state tracker of the program.
+ *  @param state a pointer to the state tracker of the program.
  */
 void Options_menu(int* state){
     int i;
@@ -974,7 +1008,7 @@ void Options_menu(int* state){
 /**
  * @brief 
  * 
- * @param state 
+ * @param state a pointer to the state tracker of the program.
  */
 void Find_Student_Menu(int* state){
     int Option_num = 0;
@@ -1083,7 +1117,7 @@ void Find_Student_Menu(int* state){
 /**
  * @brief 
  * 
- * @param state 
+ * @param state a pointer to the state tracker of the program.
  */
 void Display_Student_Menu(int* state){
     int i;
@@ -1174,13 +1208,23 @@ void Display_Student_Menu(int* state){
 /**
  * @brief 
  * 
- * @param state 
+ * @param state a pointer to the state tracker of the program.
  */
 void Add_Student_Menu(int* state){ 
     int i;
-    
+    if(student_num == MAX_STUDENTS){
+        Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
+        Move_Cursor(50, 20);
+        printf("No More Space for new students");
+        Move_Cursor(50, 21);
+        printf("Press Enter to go back");
+        char ch;
+        while(ch != '\n'){
+            ch = getc(stdin);
+        }
+        *state = OPTIONS_UI;
+    }
     Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
-
 
     Add_Student_viewer();
 
@@ -1191,6 +1235,17 @@ void Developer_Info_Menu(int* state){
     int i;
     int j;
     char ch;
+
+    HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE);
+    DWORD mode;
+    DWORD oldmode;
+    // Get the current input mode of the console
+    GetConsoleMode(hInput, &oldmode);
+    mode = oldmode;
+    
+    // Set console mode to disable line buffering
+    SetConsoleMode(hInput, mode & ~(ENABLE_LINE_INPUT | ENABLE_ECHO_INPUT));
+
     Application_Border(0, 0, BORDER_WIDTH, BORDER_HEIGHT, BACKGROUND_WHITE);
     
 
@@ -1232,7 +1287,6 @@ void Developer_Info_Menu(int* state){
  * 
  */
 void Main_Menu_UI(){
-    // system("chcp 65001");
     char* Welcome_messege[] = {
     "██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗",
     "██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗",
@@ -1269,9 +1323,9 @@ void Main_Menu_UI(){
 }
 
 /**
- * @brief 
+ * @brief Draws the main application menu.
  * 
- * @param state 
+ * @param state a pointer to the state tracker of the program.
  */
 void Start(int* state){
     int Current_Choice = LOG_IN_UI;

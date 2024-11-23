@@ -22,6 +22,13 @@
 #define CARD_POS_X 40 
 #define CARD_POS_Y 10
 
+#define BORDER_VERTICAL   "\u2588"  
+#define BORDER_TOP       "\u2580"   
+#define BORDER_BOTTOM    "\u2584"   
+#define MENU_BLOCK       "\u2588"   
+#define MENU_PADDING     1
+
+
 enum PROGRAM_UI{
     START_UI = 0,
     LOG_IN_UI = 10,

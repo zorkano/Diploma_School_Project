@@ -1,7 +1,7 @@
 #include "display.h"
 
 int main(void){
-    int state = START_UI; //return to START_UI after finishing
+    int state = START_UI;
     int wrongPass;
     system("chcp 65001");
 
